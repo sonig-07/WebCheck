@@ -1,11 +1,10 @@
-# WebCheck - Automated Web QA Runner (Java + Selenium)
+# WebCheck - Automated Web QA Run (Java + Selenium)
 
 A console tool that opens a real browser, runs a list of automated checks on an
 **online store** and on common **web-page widgets**, then prints PASS/FAIL, saves a
 **screenshot for every failure** and writes an **HTML report**.
 
-Plain Java + Selenium WebDriver. No TestNG / no framework - the runner, assertions and
-report are written by hand (about 250 lines in `core/`), so every piece is easy to explain.
+Java + Selenium WebDriver.
 
 ## What it checks
 **store** (https://www.saucedemo.com) - 12 checks
@@ -32,10 +31,10 @@ reports/  screenshots/     generated at run time
 ```
 
 ## Run
-Needs JDK 17+, Maven, Chrome (Selenium Manager downloads the driver automatically).
+Needs JDK 17+, Maven, Chrome (Selenium Manager).
 
 ```powershell
-mvn -q compile exec:java                                   # everything
+mvn -q compile exec:java                                   
 mvn -q compile exec:java "-Dexec.args=store"               # store only
 mvn -q compile exec:java "-Dexec.args=widgets"             # widgets only
 mvn -q compile exec:java "-Dheadless=true"                 # no visible browser
@@ -43,7 +42,7 @@ mvn -q compile exec:java "-Dheadless=true"                 # no visible browser
 (Quotes around `-D...` are needed in PowerShell.) Then open `reports/report.html`.
 
 ## Selenium concepts used (and where)
-| Concept | Where |
+| Concept | Present |
 |---|---|
 | Launch / options / headless | Browser.start |
 | Locators: id, name, class, tag, linkText, CSS, XPath | StoreChecks, WidgetChecks |
@@ -63,7 +62,7 @@ mvn -q compile exec:java "-Dheadless=true"                 # no visible browser
 | Screenshots | Screenshots.take (on every failure) |
 
 ## Resume / interview framing
-**WebCheck - Automated Web QA Runner | Java, Selenium WebDriver, Maven**
+**WebCheck - Automated Web QA Run | Java, Selenium WebDriver**
 - Built a Java/Selenium tool that runs 25 automated functional checks (login, catalogue, cart, checkout, alerts, frames, windows, tables, date picker, upload) against a demo e-commerce site and common web widgets.
 - Designed a small custom runner with failure isolation, per-check browser reset, screenshot capture on failure and an HTML report - without any test framework.
 - Used explicit waits throughout to remove flaky timing failures; supports headless execution.
