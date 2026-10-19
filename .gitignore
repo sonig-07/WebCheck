@@ -1,0 +1,4 @@
+target/
+*.class
+screenshots/*.png
+reports/*.html
