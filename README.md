@@ -61,10 +61,3 @@ mvn -q compile exec:java "-Dheadless=true"                 # no visible browser
 | File upload | widgets |
 | Screenshots | Screenshots.take (on every failure) |
 
-## Resume / interview framing
-**WebCheck - Automated Web QA Run | Java, Selenium WebDriver**
-- Built a Java/Selenium tool that runs 25 automated functional checks (login, catalogue, cart, checkout, alerts, frames, windows, tables, date picker, upload) against a demo e-commerce site and common web widgets.
-- Designed a small custom runner with failure isolation, per-check browser reset, screenshot capture on failure and an HTML report - without any test framework.
-- Used explicit waits throughout to remove flaky timing failures; supports headless execution.
-
-Natural next step (to say in interviews): move the same checks to TestNG + Page Object Model + Extent Reports.
